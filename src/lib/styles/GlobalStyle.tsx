@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,14 +48,14 @@ html, body, div, span, applet, object, iframe,
         border-collapse: collapse;
         border-spacing: 0;
     }
+   
+
     html,body{
-        font-size:10px;
+        font-size:${({ theme }) => theme.fontSize.medium};
         font-family: -apple-system, 'Noto Sans KR', sans-serif;
     }
     a{
         text-decoration: none;
-        color:#1d1d1d;
+        color: ${({ theme }) => theme.color.black};
     }
 `;
-
-export default GlobalStyles;

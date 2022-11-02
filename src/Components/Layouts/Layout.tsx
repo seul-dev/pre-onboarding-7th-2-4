@@ -1,18 +1,20 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import HeaderBar from "./HeaderBar";
 const Layout = () => {
   return (
-    <Containter>
-      <HeaderBar />
+    <Wrapper>
       <Outlet />
-    </Containter>
+    </Wrapper>
   );
 };
 
 export default Layout;
 
-const Containter = styled.div`
+const Wrapper = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  max-width: 450px;
+  margin: 0 auto;
   background-color: ${({ theme }) => theme.color.white};
 `;
