@@ -2,14 +2,14 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 interface Props {
-  name: string;
+  name?: string;
   children: ReactNode;
 }
 
 const ListItem = ({ name, children }: Props) => {
   return (
-    <Container>
-      <h1>{name}</h1>
+    <Container singleItem={!name}>
+      {name && <h1>{name}</h1>}
       <p>{children}</p>
     </Container>
   );
@@ -17,12 +17,13 @@ const ListItem = ({ name, children }: Props) => {
 
 export default ListItem;
 
-const Container = styled.div`
+const Container = styled.div<{ singleItem: boolean }>`
   width: 100%;
   height: 48px;
   padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ singleItem }) =>
+    singleItem ? "flex-end" : "space-between"};
   align-items: center;
   font-size: ${({ theme }) => theme.fontSize.medium};
   & > h1 {

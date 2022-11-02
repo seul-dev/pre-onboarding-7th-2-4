@@ -35,7 +35,7 @@ const CarItem = (props: Props) => {
         </Title>
         <SubInfo>
           <p>
-            `${SEGMENT[segment]} / ${FUELTYPE[fuelType]}`
+            {SEGMENT[segment]} / {FUELTYPE[fuelType]}
           </p>
           <p>월 {amount} 원 부터</p>
         </SubInfo>

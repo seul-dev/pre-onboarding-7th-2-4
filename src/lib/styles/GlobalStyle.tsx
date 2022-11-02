@@ -52,9 +52,14 @@ html, body, div, span, applet, object, iframe,
         border-spacing: 0;
     }
     *{
-        box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     }
-
+  
+    *::-webkit-scrollbar {
+    display: none;
+    }
     html,body{
         font-size:${({ theme }) => theme.fontSize.medium};
         font-family: -apple-system, 'Noto Sans KR', sans-serif;
