@@ -5,7 +5,7 @@ export const theme: DefaultTheme = {
     black: "#000000",
     gray: "#D9D9D9",
     blue: "#0094FF",
-    white: "FFFFFF"
+    white: "#FFFFFF"
   },
   fontSize: {
     XLarge: "24px",

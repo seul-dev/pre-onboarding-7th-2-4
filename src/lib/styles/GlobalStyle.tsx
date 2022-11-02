@@ -36,6 +36,9 @@ html, body, div, span, applet, object, iframe,
     ol, ul {
         list-style: none;
     }
+    li {
+        list-style: none;
+    }
     blockquote, q {
         quotes: none;
     }
@@ -48,7 +51,9 @@ html, body, div, span, applet, object, iframe,
         border-collapse: collapse;
         border-spacing: 0;
     }
-   
+    *{
+        box-sizing: border-box;
+    }
 
     html,body{
         font-size:${({ theme }) => theme.fontSize.medium};

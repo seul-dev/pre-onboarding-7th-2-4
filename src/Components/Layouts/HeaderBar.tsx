@@ -28,5 +28,6 @@ const SHeader = styled.header`
   justify-content: center;
   & > h1 {
     font-size: ${({ theme }) => theme.fontSize.medium};
+    font-weight: 700;
   }
 `;

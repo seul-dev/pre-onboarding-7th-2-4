@@ -3,15 +3,15 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 const Layout = () => {
   return (
-    <Wrapper>
+    <Container>
       <Outlet />
-    </Wrapper>
+    </Container>
   );
 };
 
 export default Layout;
 
-const Wrapper = styled.div`
+const Container = styled.div`
   height: 100%;
   min-height: 100vh;
   max-width: 450px;
