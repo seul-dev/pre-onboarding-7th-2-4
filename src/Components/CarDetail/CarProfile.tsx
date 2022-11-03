@@ -2,16 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  imgUrl: string;
+  imageUrl: string;
   brand: string;
   name: string;
 }
 
-const CarProfile = ({ imgUrl, brand, name }: Props) => {
+const CarProfile = ({ imageUrl, brand, name }: Props) => {
   return (
     <>
       <ImgContainer>
-        <img src={imgUrl} alt={name} />
+        <img src={imageUrl} alt={name} />
       </ImgContainer>
       <Title>
         <h3>{brand}</h3>

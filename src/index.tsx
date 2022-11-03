@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "./lib/styles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 
 const queryClient = new QueryClient({
@@ -28,7 +29,9 @@ root.render(
         <GlobalStyle />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
-          <App />
+          <HelmetProvider>
+            <App />
+          </HelmetProvider>
         </QueryClientProvider>
       </ThemeProvider>
     </BrowserRouter>

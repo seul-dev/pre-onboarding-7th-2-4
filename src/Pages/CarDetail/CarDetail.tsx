@@ -9,6 +9,7 @@ import MainLayout from "@/Components/Layouts/MainLayout";
 import { FUELTYPE, SEGMENT } from "../../lib/types/index";
 import { dateFormat } from "../../lib/util/dateFormat";
 import { amountFormat } from "@/lib/util/amountFormat";
+import DetailOG from "@/Components/OpenGraph/DetailOG";
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -18,11 +19,16 @@ const CarDetail = () => {
     <div>
       <HeaderBar title="차량상세" prevButton={true} />
       {isLoading && <MainLayout message="불러오는 중" />}
-
       {carInfo && (
         <>
+          <DetailOG
+            imageUrl={carInfo?.attribute.imageUrl}
+            brand={carInfo?.attribute.brand}
+            name={carInfo?.attribute.name}
+            amount={carInfo?.amount}
+          />
           <CarProfile
-            imgUrl={carInfo?.attribute.imageUrl}
+            imageUrl={carInfo?.attribute.imageUrl}
             brand={carInfo?.attribute.brand}
             name={carInfo?.attribute.name}
           />
