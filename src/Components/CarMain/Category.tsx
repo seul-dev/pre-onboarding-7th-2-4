@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import CategoryTag from "./CategoryTag";
 import { TSegmentValue } from "../../lib/types/index";
 
-// interface Props {
-//   oprtion: string;
-//   // setOption 함수 )
-// }
+interface Props {
+  currentCategory: TSegmentValue;
+  setCurrentCategory: React.Dispatch<React.SetStateAction<TSegmentValue>>;
+}
 
-const Category = () => {
-  // 여기서 선택되는게 아니라 category와 list의 부모 컴포넌트여야 함
-  const [currentCategory, setCurrentCategry] = useState("전체");
-
+const Category = ({ currentCategory, setCurrentCategory }: Props) => {
   const CATEGORY_LIST: TSegmentValue[] = [
     "전체",
     "소형",
@@ -26,7 +23,7 @@ const Category = () => {
           key={category}
           tagName={category}
           isSelected={currentCategory === category}
-          onClick={() => setCurrentCategry(category)}
+          onClick={() => setCurrentCategory(category)}
         />
       ))}
     </Container>

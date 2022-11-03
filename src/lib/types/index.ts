@@ -4,9 +4,9 @@ export const FUELTYPE = {
   hybrid: "하이브리드"
 } as const;
 
-type fuelTypeObject = typeof FUELTYPE;
-export type TFuelType = keyof fuelTypeObject;
-export type TFuelTypeValue = fuelTypeObject[TFuelType];
+type FuelTypeObject = typeof FUELTYPE;
+export type TFuelType = keyof FuelTypeObject;
+export type TFuelTypeValue = FuelTypeObject[TFuelType];
 
 export const SEGMENT = {
   ALL: "전체",
@@ -16,6 +16,36 @@ export const SEGMENT = {
   SUV: "SUV"
 } as const;
 
-type segmentObject = typeof SEGMENT;
-export type TSegment = keyof segmentObject;
-export type TSegmentValue = segmentObject[TSegment];
+type SegmentObject = typeof SEGMENT;
+export type TSegment = keyof SegmentObject;
+export type TSegmentValue = SegmentObject[TSegment];
+
+export type TSegmentRequest = "SUV" | "C" | "D" | "E" | "";
+
+export interface IAttribute {
+  brand: string;
+  name: string;
+  segment: Partial<TSegment>;
+  fuelType: TFuelType;
+  imageUrl: string;
+}
+
+export interface IInsurance {
+  name: string;
+  description: string;
+}
+
+export interface IAdditionalProd {
+  name: string;
+  amount: number;
+}
+
+export interface ICar {
+  id: number;
+  amount: number;
+  attribute: IAttribute;
+  startDate: string;
+  createdAt: string;
+  insurance?: IInsurance[];
+  additionalProducts?: IAdditionalProd[];
+}

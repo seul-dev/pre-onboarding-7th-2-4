@@ -1,33 +1,19 @@
 import React from "react";
-import { TFuelType, TSegment, SEGMENT, FUELTYPE } from "@/lib/types";
+import { SEGMENT, FUELTYPE, ICar } from "@/lib/types";
 import styled from "styled-components";
 import NewItemTag from "./NewItemTag";
 import { validateNew } from "../../lib/util/validateNew";
 
 interface Props {
-  brand: string;
-  name: string;
-  segment: TSegment;
-  fuelType: TFuelType;
-  amount: number;
-  createdAt: string;
-  imageUrl: string;
-  onClick: () => void;
+  car: ICar;
+  onClick: (id: number) => void;
 }
 
-const CarItem = (props: Props) => {
-  const {
-    brand,
-    name,
-    segment,
-    fuelType,
-    imageUrl,
-    amount,
-    createdAt,
-    onClick
-  } = props;
+const CarItem = ({ car, onClick }: Props) => {
+  const { id, attribute, amount, createdAt } = car;
+  const { brand, fuelType, imageUrl, name, segment } = attribute;
   return (
-    <Container onClick={onClick}>
+    <Container onClick={() => onClick(id)}>
       <Info>
         <Title>
           <h2>{brand}</h2>
